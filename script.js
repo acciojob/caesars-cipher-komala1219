@@ -14,11 +14,19 @@ function rot13(encodedStr){
    let decodedArr = []; // Your Result goes here
   // Only change code below this line
 
-  return ;//return decodedArr
+	for (let i = 0; i < encodedStr.length; i++) {
+    const char = encodedStr[i];
+    const decodedChar = lookup[char] ? lookup[char] : char;
+    decodedArr.push(decodedChar);
+  }
+  return decodedArr.join('');
+
+  //return ;//return decodedArr
 }
 
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
 // console.log(rot13("SERR YBIR? NPPVBWBO"));
+console.log(rot13("SERR YBIR? NPPVBWBO"));
 
 module.exports = rot13;
